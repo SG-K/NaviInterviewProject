@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GitHub Closed PullRequests</string>
+
+    <string name="created_on">Created On:</string>
+    <string name="closed_on">Closed On:</string>
+    <string name="empty_list_msg">No Pull Requests to Show</string>
+    <string name="retry_label">ReTry</string>
+</resources>
