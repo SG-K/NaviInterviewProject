@@ -2,11 +2,10 @@ package com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.us
 
 import com.google.common.truth.Truth
 import com.self.githubclosedpullrequests.core.utils.GitHubConstants
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.repository.FakeGitHubRepositoryImplTest
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.pull_requests.PullRequestsResponse
+import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.repository.FakeGitHubClosedPullRequestsImplTest
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.pull_requests.ui.PullRequestUIModel
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.requests.PRsRequestModal
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubRepository
+import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubClosedPullRequests
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test
@@ -14,12 +13,12 @@ import org.junit.Test
 class GetClosedPullRequestsUseCaseTest{
 
     private lateinit var getClosedPullRequestsUseCase: GetClosedPullRequestsUseCase
-    private lateinit var fakeGitHubRepositoryImplTest: GitHubRepository
+    private lateinit var fakeGitHubRepositoryImplTest: GitHubClosedPullRequests
 
     @Before
     fun setUp(){
 
-        fakeGitHubRepositoryImplTest = FakeGitHubRepositoryImplTest()
+        fakeGitHubRepositoryImplTest = FakeGitHubClosedPullRequestsImplTest()
         getClosedPullRequestsUseCase = GetClosedPullRequestsUseCase(repository = fakeGitHubRepositoryImplTest)
 
     }

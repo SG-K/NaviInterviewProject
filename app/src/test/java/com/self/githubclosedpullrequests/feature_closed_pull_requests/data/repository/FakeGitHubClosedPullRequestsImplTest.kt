@@ -6,7 +6,7 @@ import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.mappe
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.pull_requests.PullRequestsResponse
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.pull_requests.ui.PullRequestUIModel
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.requests.PRsRequestModal
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubRepository
+import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubClosedPullRequests
 import java.io.InputStreamReader
 import java.lang.Exception
 
@@ -14,7 +14,7 @@ data class MockResposen(
     val list : List<PullRequestsResponse>?
 )
 
-class FakeGitHubRepositoryImplTest : GitHubRepository {
+class FakeGitHubClosedPullRequestsImplTest : GitHubClosedPullRequests {
 
     fun getJsonContent(fileName: String): String {
         return InputStreamReader(this.javaClass.classLoader!!.getResourceAsStream(fileName)).use { it.readText() }

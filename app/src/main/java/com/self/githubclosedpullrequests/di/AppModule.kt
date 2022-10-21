@@ -2,9 +2,8 @@ package com.self.githubclosedpullrequests.di
 
 import com.self.githubclosedpullrequests.BuildConfig
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.data_source.GitHubAPIService
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.mappers.CollosedPullRequestsMapper
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.repository.GitHubRepositoryImpl
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubRepository
+import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.repository.GitHubClosedPullRequestsImpl
+import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubClosedPullRequests
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.use_case.GetClosedPullRequestsUseCase
 import dagger.Module
 import dagger.Provides
@@ -50,13 +49,13 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideGitHubRepoRepository(gitHubAPIService: GitHubAPIService): GitHubRepository {
-        return GitHubRepositoryImpl(gitHubAPIService)
+    fun provideGitHubRepoRepository(gitHubAPIService: GitHubAPIService): GitHubClosedPullRequests {
+        return GitHubClosedPullRequestsImpl(gitHubAPIService)
     }
 
     @Provides
     @Singleton
-    fun provideGitHubRepoUseCase(repository: GitHubRepository): GetClosedPullRequestsUseCase {
+    fun provideGitHubRepoUseCase(repository: GitHubClosedPullRequests): GetClosedPullRequestsUseCase {
         return GetClosedPullRequestsUseCase(repository)
     }
 

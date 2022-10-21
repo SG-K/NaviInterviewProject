@@ -15,6 +15,10 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import javax.inject.Inject
 
+/**
+ * We're not using any mock webserver to simulate the APIs to
+ * keep the tests as much closer to real-time as possible.
+ */
 @HiltAndroidTest
 @RunWith(AndroidJUnit4::class)
 class ClosedPullRequestsListScreenKtTest {

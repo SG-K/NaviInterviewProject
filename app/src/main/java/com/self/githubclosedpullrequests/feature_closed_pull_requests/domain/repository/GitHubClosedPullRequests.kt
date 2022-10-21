@@ -4,7 +4,7 @@ import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.mod
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.pull_requests.ui.PullRequestUIModel
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.requests.PRsRequestModal
 
-interface GitHubRepository {
+interface GitHubClosedPullRequests {
     
     suspend fun getClosedPullRequestList(prsRequestModal : PRsRequestModal) : Result<List<PullRequestUIModel>>
 

@@ -1,16 +1,15 @@
 package com.self.githubclosedpullrequests.feature_closed_pull_requests.data.repository
 
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubRepository
+import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.repository.GitHubClosedPullRequests
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.data_source.GitHubAPIService
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.data.mappers.CollosedPullRequestsMapper
-import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.pull_requests.PullRequestsResponse
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.pull_requests.ui.PullRequestUIModel
 import com.self.githubclosedpullrequests.feature_closed_pull_requests.domain.model.requests.PRsRequestModal
 import java.lang.Exception
 
-class GitHubRepositoryImpl(
+class GitHubClosedPullRequestsImpl(
     private val gitHubAPIService: GitHubAPIService
-) : GitHubRepository {
+) : GitHubClosedPullRequests {
 
     override suspend fun getClosedPullRequestList(
         prsRequestModal : PRsRequestModal
